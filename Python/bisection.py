@@ -19,13 +19,13 @@ ln  = np.log
 log = np.log10
 
 fx = input("Enter the function whose roots you wish to determine :")      #take function as input from the user
-f = lambda x: eval(fx)                                                 # using lambda for defining function
+f  = lambda x: eval(fx)                                                 # using lambda for defining function
 
 #Enter the initial approximation and Error as Input from User
-xl = float((input("Enter the first value of guess interval :")))
-xu = float((input("Enter the end value of guess interval :")))
+xl  = float((input("Enter the first value of guess interval :")))
+xu  = float((input("Enter the end value of guess interval :")))
 tol = float((input("Enter the allowed error (for eg. 0.1 or 0.01 or 0.001, etc.):")))
-N  = int(input("Enter the no. of iterations you want to run:"))
+N   = int(input("Enter the no. of iterations you want to run:"))
 
 # Define the actual algorithm as a function
 def bisect(f, xl, xu, tol, N):
@@ -56,7 +56,7 @@ xnew = np.linspace(x.min(), x.max(), 300)       # Interpolates extra values to m
 f_smooth = spline(x, f(x), xnew) 				# Use the spline tool from SciPy to get smoother curves
 
 #Plot the curves
-fig=plt.figure()
+fig = plt.figure()
 plt.plot(xnew, f_smooth, '-b', label = 'function')
 plt.plot(Ans, 0, 'ro', label = 'The root of the function')
 plt.xlabel('x')
